@@ -1658,9 +1658,9 @@ static void cfq_pd_init(struct blkg_policy_data *pd)
 
 	if (pd->blkg->blkcg == &blkcg_root) {
 		cgd->weight = 1000;
-		cgd->group_idle = 2000 * NSEC_PER_USEC;
+		cgd->group_idle = 2000;
 	} else if (pd->blkg->blkcg == blkcg_bg) {
-		cgd->weight = 200;
+		cgd->weight = 10;
 		cgd->group_idle = 0;
 	}
 
